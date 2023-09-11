@@ -1,0 +1,171 @@
+﻿<Window x:Class="Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="MainWindow"   
+        Height="650" 
+        Width="1100" 
+        MinHeight="650"
+        MaxHeight="650"
+        MinWidth="1100"
+        MaxWidth="1100"
+        Background="Transparent"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Images/Logo.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/MK.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Button 
+                x:Name="btnClose"
+                Width="25"
+                Height="25"
+                Margin="10"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Style="{StaticResource ButtonStyle.ModernClose}" 
+                Click="btnClose_Click">
+                <Image
+                    x:Name="imgbtnExit"
+                    Width="25"
+                    Height="25"
+                    Source="/Images/Close.png" />
+            </Button>
+
+        </Grid>
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition  Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="1" Grid.Column="0" >
+
+                <Button 
+                    x:Name="btnCesear"
+                    Content="Cesear" 
+                    HorizontalAlignment="Left"
+                    Margin="27,28,0,0"
+                    VerticalAlignment="Top" 
+                    Width="100"
+                    Click="btnCesear_Click"
+                    Style="{StaticResource ButtonStyle.Modern}"
+                    Height="30"/>
+
+                <Button 
+                    x:Name="btnAutoKey"
+                    Content="Auto Key"
+                    HorizontalAlignment="Left"
+                    Margin="27,79,0,0"
+                    VerticalAlignment="Top"
+                    Width="100"
+                    Style="{StaticResource ButtonStyle.Modern}"
+                    Height="30" 
+                    Click="btnAutoKey_Click"/>
+
+                <Button 
+                    x:Name="btnDES"
+                    Content="DES"
+                    HorizontalAlignment="Left" 
+                    Margin="27,130,0,0"
+                    VerticalAlignment="Top" 
+                    Width="100"
+                    Style="{StaticResource ButtonStyle.Modern}" 
+                    Height="30"
+                    Click="btnDES_Click"/>
+
+                <Button 
+                    x:Name="btnMode"
+                    Content="Mode"
+                    HorizontalAlignment="Left" 
+                    Margin="27,231,0,0"
+                    VerticalAlignment="Top" 
+                    Width="100"
+                    Style="{StaticResource ButtonStyle.Modern}"
+                    Height="30" 
+                    Click="btnMode_Click"/>
+                <Button 
+                    x:Name="btnRSA"
+                    Content="RSA"
+                    HorizontalAlignment="Left" 
+                    Margin="27,181,0,0"
+                    VerticalAlignment="Top" 
+                    Width="100"
+                    Style="{StaticResource ButtonStyle.Modern}"
+                    Height="30" 
+                    Click="btnRSA_Click"/>
+            </Grid>
+
+            <Grid Grid.Column="1"/>
+
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Label
+                 Content="Get Started" 
+                 FontFamily="arial"
+                 FontWeight="Bold"
+                 HorizontalAlignment="Left" 
+                 Margin="254,162,0,0"
+                 FontSize="50"
+                 VerticalAlignment="Top" Height="106" Width="288">
+                    <Label.Foreground>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFBB0F0E" Offset="0"/>
+                            <GradientStop Color="#FFFFFDFE" Offset="1"/>
+                            <GradientStop Color="#FF441211" Offset="0.264"/>
+                        </RadialGradientBrush>
+                    </Label.Foreground>
+                </Label>
+
+                <local:Caeser
+                    x:Name="CeaserWin"
+                    HorizontalAlignment="Left" 
+                    Height="600" 
+                    VerticalAlignment="Top"
+                    Width="950"
+                    Visibility="Hidden"/>
+
+                <local:Auto_Key
+                     x:Name="AutokeyWin"
+                    HorizontalAlignment="Left" 
+                    Height="600" 
+                    VerticalAlignment="Top"
+                    Width="950"
+                    Visibility="Hidden"/>
+
+                <local:DES
+                    x:Name="DESWin"
+                    HorizontalAlignment="Left" 
+                    Height="600" 
+                    VerticalAlignment="Top"
+                    Width="950"
+                    Visibility="Hidden"/>
+
+                <local:RSA
+                    x:Name="RSAwin"
+                    HorizontalAlignment="Left" 
+                    Height="600" 
+                    VerticalAlignment="Top"
+                    Width="950"
+                    Visibility="Hidden"/>
+
+
+            </Grid>
+
+
+        </Grid>
+        
+
+
+    </Grid>
+</Window>
